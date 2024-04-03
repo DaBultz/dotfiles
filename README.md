@@ -15,3 +15,13 @@
     - [ ] Makde the edit inlined, and show live preview of the changes 
 - [ ] Format git commit messages to 72 characters wide
 - [ ] Add support for `neogit` or other git plugins
+
+
+## REDO TODO:
+
+- [ ] Add `whichkey` 
+- [ ] Add `https://github.com/nvim-treesitter/nvim-treesitter-textobjects`
+- [ ] Add `https://github.com/JoosepAlviste/nvim-ts-context-commentstring`
+- [ ] Add Emmet language server
+- [ ] Add TS Language Server
+- [ ] Add JSON Language Server
