@@ -14,6 +14,9 @@ return {
       require('mason-tool-installer').setup {
         ensure_installed = {
           'stylua',
+          'eslint_d',
+          'prettierd',
+          'codespell',
         },
         automatic_installation = true,
       }
@@ -21,6 +24,12 @@ return {
       require('mason-lspconfig').setup {
         ensure_installed = {
           'lua_ls',
+          'tsserver',
+          'tailwindcss',
+          'html',
+          'cssls',
+          'jsonls',
+          'emmet_language_server',
         },
       }
     end,

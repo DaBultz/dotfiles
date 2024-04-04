@@ -1,4 +1,4 @@
-require('options')
+require 'options'
 
 -- Install lazy
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -11,4 +11,6 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins', {})
-
+-- Keymap and autocommands
+require 'keymap'
+require 'autocommands'

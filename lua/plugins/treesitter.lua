@@ -7,9 +7,14 @@ return {
     -- 'nvim-treesitter/nvim-treesitter-refactor',
     -- 'nvim-treesitter/nvim-treesitter-context',
     'windwp/nvim-ts-autotag',
+    'JoosepAlviste/nvim-ts-context-commentstring',
   },
   config = function()
     require('nvim-ts-autotag').setup()
+    require('ts_context_commentstring').setup {
+      enable_autocmd = false,
+    }
+
     ---@diagnostic disable-next-line: missing-fields
     require('nvim-treesitter.configs').setup {
       context_commentstring = {
@@ -34,19 +39,19 @@ return {
       -- Auto Tag
       autotag = {
         enablle = true,
-        filetypes = {
-          'html',
-          'javascript',
-          'typescript',
-          'javascriptreact',
-          'typescriptreact',
-          'svelte',
-          'vue',
-          'tsx',
-          'jsx',
-          'markdown',
-          'astro',
-        },
+        -- filetypes = {
+        --   'html',
+        --   'javascript',
+        --   'typescript',
+        --   'javascriptreact',
+        --   'typescriptreact',
+        --   'svelte',
+        --   'vue',
+        --   'tsx',
+        --   'jsx',
+        --   'markdown',
+        --   'astro',
+        -- },
       },
     }
   end,
