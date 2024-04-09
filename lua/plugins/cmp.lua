@@ -6,24 +6,23 @@ return {
     'hrsh7th/cmp-nvim-lua', -- nvim lua completion
     'L3MON4D3/LuaSnip', -- Snippets
     'zbirenbaum/copilot-cmp',
-    'onsails/lspkind-nvim',
   },
   config = function()
     -- Setup cmp
     require('copilot_cmp').setup()
 
-    local lspkind = require 'lspkind'
+    -- local lspkind = require 'lspkind'
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
 
     luasnip.config.setup {}
 
-    lspkind.init {
-      symbol_map = {
-        Copilot = '',
-      },
-    }
-
+    -- lspkind.init {
+    --   symbol_map = {
+    --     Copilot = '',
+    --   },
+    -- }
+    --
     local has_words_before = function()
       unpack = unpack or table.unpack
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -35,9 +34,9 @@ return {
 
     cmp.setup {
       ---@diagnostic disable-next-line: missing-fields
-      formatting = {
-        format = lspkind.cmp_format(),
-      },
+      -- formatting = {
+      --   format = lspkind.cmp_format(),
+      -- },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
@@ -97,9 +96,9 @@ return {
         ghost_text = true,
       },
       sources = {
-        { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'copilot' },
       },
     }
   end,

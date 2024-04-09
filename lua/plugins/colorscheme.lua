@@ -18,4 +18,13 @@ return {
       vim.cmd.colorscheme 'carbonfox'
     end,
   },
+  {
+    'projekt0n/github-nvim-theme',
+    config = function()
+      require('github-theme').setup {
+        -- ...
+      }
+    end,
+  },
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 }

@@ -1,1 +1,4 @@
-require('lspconfig').tsserver.setup {}
+-- Typescript tools
+require('typescript-tools').setup {}
+
+-- require('lspconfig').tsserver.setup {}

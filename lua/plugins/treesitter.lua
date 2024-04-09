@@ -17,9 +17,6 @@ return {
 
     ---@diagnostic disable-next-line: missing-fields
     require('nvim-treesitter.configs').setup {
-      context_commentstring = {
-        enable = true,
-      },
       ensure_installed = {
         'lua',
         'markdown',

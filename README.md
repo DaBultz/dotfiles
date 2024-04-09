@@ -28,7 +28,9 @@
 
 - [ ] Add `whichkey` 
 - [ ] Add eslint Language Server
-
+- [ ] Maybe replace indent-blankline with https://github.com/shellRaining/hlchunk.nvim
+- [ ] https://github.com/nvimtools/none-ls.nvim
+- [ ] Add Markdown Support
 
 ## Consider:
 
@@ -53,4 +55,6 @@
 - https://github.com/ggandor/leap.nvim
 - https://github.com/otavioschwanck/arrow.nvim (or hapoon)
 - https://github.com/vague2k/huez.nvim
-- 
+- https://github.com/puremourning/vimspector
+- https://github.com/dmmulroy/ts-error-translator.nvim
+- https://github.com/luckasRanarison/tailwind-tools.nvim
