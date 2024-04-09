@@ -22,7 +22,11 @@ return {
       -- Pretty Code Actions with a preview
       require('actions-preview').setup {
         telescope = {
+          width = 0.2,
+          height = 0.2,
+          sorting_strategy = 'ascending',
           layout_strategy = 'vertical',
+          prompt_position = 'top',
         },
       }
 

@@ -8,6 +8,7 @@ return {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
     },
+    'andrew-george/telescope-themes',
   },
   config = function()
     -- [[ Configure Telescope ]]
@@ -25,13 +26,14 @@ return {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
+        ['themes'] = {},
       },
     }
 
     -- Enable telescope extensions, if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
-
+    pcall(require('telescope').load_extension, 'themes')
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
@@ -40,5 +42,12 @@ return {
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
     vim.keymap.set('n', '<leader>fe', ':Telescope file_browser<CR>', { desc = '[F]ile [B]rowser' })
+    -- Theme Switcher
+    vim.keymap.set(
+      'n',
+      '<leader>th',
+      ':Telescope themes<CR>',
+      { noremap = true, silent = true, desc = 'Theme Switcher' }
+    )
   end,
 }
