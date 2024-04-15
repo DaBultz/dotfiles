@@ -6,6 +6,7 @@ return {
     'hrsh7th/cmp-nvim-lua', -- nvim lua completion
     'L3MON4D3/LuaSnip', -- Snippets
     'zbirenbaum/copilot-cmp',
+    'rafamadriz/friendly-snippets',
   },
   config = function()
     -- Setup cmp
@@ -15,6 +16,7 @@ return {
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
 
+    require('luasnip.loaders.from_vscode').lazy_load()
     luasnip.config.setup {}
 
     -- lspkind.init {
