@@ -26,11 +26,15 @@
 
 ## REDO TODO:
 
-- [ ] Add `whichkey` 
 - [ ] Add eslint Language Server
-- [ ] Maybe replace indent-blankline with https://github.com/shellRaining/hlchunk.nvim
 - [ ] https://github.com/nvimtools/none-ls.nvim
 - [ ] Add Markdown Support
+- [ ] Improve telescope in a monorepo
+    - [ ] By default only search in the current project
+    - [ ] By Appending `..` it will search in the parent project
+    - [ ] Auto discovery of package.jsons
+    - [ ] Switch project using telescope (maybe use sessions)
+- [ ] Improve indent line, so it's close to VSCode
 
 ## Consider:
 
@@ -58,3 +62,5 @@
 - https://github.com/puremourning/vimspector
 - https://github.com/dmmulroy/ts-error-translator.nvim
 - https://github.com/luckasRanarison/tailwind-tools.nvim
+- https://github.com/anuvyklack/hydra.nvim
+
