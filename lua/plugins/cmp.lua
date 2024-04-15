@@ -46,9 +46,9 @@ return {
       },
       mapping = cmp.mapping.preset.insert {
         -- Select the [n]ext item
-        ['<C-j>'] = cmp.mapping.select_next_item(),
+        ['<C-j>'] = cmp.mapping.select_next_item { behavior = 'Select' },
         -- Select the [p]revious item
-        ['<C-k>'] = cmp.mapping.select_prev_item(),
+        ['<C-k>'] = cmp.mapping.select_prev_item { behavior = 'Select' },
 
         ['<C-f>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
