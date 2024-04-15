@@ -1,1 +1,3 @@
-require('lspconfig').cssls.setup {}
+require('lspconfig').cssls.setup {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
