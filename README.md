@@ -14,7 +14,6 @@
 - [ ] Add refactoring support
     - [ ] `<Leader>rr` to rename the current variable
     - [ ] Make the edit inlined, and show live preview of the changes 
-- [ ] Format git commit messages to 72 characters wide
 - [ ] Add support for `neogit` or other git plugins
 - [ ] Use neovide instead of nvim in terminal
     - How would this work? with the `--wsl` option? 
