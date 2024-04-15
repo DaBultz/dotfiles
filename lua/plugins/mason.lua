@@ -30,6 +30,7 @@ return {
           'cssls',
           'jsonls',
           'emmet_language_server',
+          'marksman',
         },
       }
     end,

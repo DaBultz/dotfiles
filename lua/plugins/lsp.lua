@@ -18,7 +18,7 @@ return {
       require 'servers.tailwindcss'
       require 'servers.html'
       require 'servers.emmet'
-
+      require 'servers.marksman'
       -- Pretty Code Actions with a preview
       require('actions-preview').setup {
         telescope = {

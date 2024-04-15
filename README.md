@@ -8,6 +8,7 @@
 - `node` and `npm` for github copilot
 - `cmake` and GCC or MSVC
 
+
 ## TODO:
 
 - [ ] Add refactoring support
@@ -28,7 +29,6 @@
 
 - [ ] Add eslint Language Server
 - [ ] https://github.com/nvimtools/none-ls.nvim
-- [ ] Add Markdown Support
 - [ ] Improve telescope in a monorepo
     - [ ] By default only search in the current project
     - [ ] By Appending `..` it will search in the parent project
