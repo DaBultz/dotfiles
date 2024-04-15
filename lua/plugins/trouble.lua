@@ -7,11 +7,6 @@ return {
       focus = true, -- Focus when opening
     }
 
-    vim.keymap.set(
-      'n',
-      '<leader>tt',
-      '<cmd>Trouble diagnostics toggle<cr>',
-      { desc = '[T]rouble [T]oggle Diagnostics' }
-    )
+    vim.keymap.set('n', 'T', '<cmd>Trouble diagnostics toggle<cr>', { desc = '[T]rouble [T]oggle Diagnostics' })
   end,
 }
