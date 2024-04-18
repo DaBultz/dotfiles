@@ -31,6 +31,7 @@ return {
           'jsonls',
           'emmet_language_server',
           'marksman',
+          'zls',
         },
       }
     end,

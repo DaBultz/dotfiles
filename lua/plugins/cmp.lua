@@ -7,8 +7,15 @@ return {
     'L3MON4D3/LuaSnip', -- Snippets
     'zbirenbaum/copilot-cmp',
     'rafamadriz/friendly-snippets',
+    'onsails/lspkind.nvim',
+    'ray-x/lsp_signature.nvim',
   },
   config = function()
+    local log = require('plenary.log').new {
+      plugin = 'cmp',
+      level = 'debug',
+    }
+
     -- Setup cmp
     require('copilot_cmp').setup()
 
@@ -19,12 +26,8 @@ return {
     require('luasnip.loaders.from_vscode').lazy_load()
     luasnip.config.setup {}
 
-    -- lspkind.init {
-    --   symbol_map = {
-    --     Copilot = '',
-    --   },
-    -- }
-    --
+    -- require('lsp_signature').setup {}
+
     local has_words_before = function()
       unpack = unpack or table.unpack
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -36,13 +39,40 @@ return {
 
     cmp.setup {
       ---@diagnostic disable-next-line: missing-fields
-      -- formatting = {
-      --   format = lspkind.cmp_format(),
-      -- },
+      formatting = {
+        fields = { 'abbr', 'menu', 'kind' },
+        format = function(entry, vim_item)
+          local kind = require('lspkind').cmp_format {
+            mode = 'symbol_text',
+            maxwidth = 80,
+          }(entry, vim_item)
+          local item = entry:get_completion_item()
+          local strings = vim.split(kind.kind, '%s', { trimempty = true })
+
+          -- Set string 2 to be copilot and remove it from string 1
+          if strings[1] == 'Copilot' then
+            strings[1] = ''
+            strings[2] = strings[1]
+          end
+
+          -- TODO: Apply formatting based on language
+          if item.labelDetails then
+            kind.kind = item.labelDetails.description or ''
+          end
+          -- kind.kind = ' ' .. (strings[1] or '') .. ' '
+          kind.menu = '  ' .. (strings[2] or '')
+
+          return kind
+        end,
+      },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
+      },
+      window = {
+        completion = cmp.config.window.bordered { border = 'single' },
+        documentation = cmp.config.window.bordered { border = 'single' },
       },
       mapping = cmp.mapping.preset.insert {
         -- Select the [n]ext item

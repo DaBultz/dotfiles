@@ -19,6 +19,8 @@ return {
       require 'servers.html'
       require 'servers.emmet'
       require 'servers.marksman'
+      require 'servers.zig'
+
       -- Pretty Code Actions with a preview
       require('actions-preview').setup {
         telescope = {

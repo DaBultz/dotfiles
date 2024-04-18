@@ -29,6 +29,8 @@ return {
         'json',
         'css',
         'html',
+        -- Programming
+        'zig',
       },
       highlight = { enable = true },
       indent = { enable = true },

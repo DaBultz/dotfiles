@@ -7,7 +7,7 @@
 - `fzf` 
 - `node` and `npm` for github copilot
 - `cmake` and GCC or MSVC
-
+- `Neovide` for Windows, as nvim didn't feel snappy inside powershell
 
 ## TODO:
 

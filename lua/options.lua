@@ -1,3 +1,11 @@
+-- See: https://neovide.dev/configuration.html
+if vim.g.neovide then
+  vim.o.guifont = 'Fira Code:h12'
+  -- vim.g.neovide_refresh_rate = 144
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_cursor_trail_size = 0.0
+end
+
 -- Set the map leader, this is required before lazy
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
