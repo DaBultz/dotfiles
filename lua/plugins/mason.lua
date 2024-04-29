@@ -17,8 +17,9 @@ return {
           'eslint_d',
           'prettierd',
           'codespell',
+          'clang-format',
         },
-        automatic_installation = true,
+        automatic_installation = false,
       }
 
       require('mason-lspconfig').setup {
@@ -32,7 +33,9 @@ return {
           'emmet_language_server',
           'marksman',
           'zls',
+          'clangd',
         },
+        automatic_installation = false,
       }
     end,
   },

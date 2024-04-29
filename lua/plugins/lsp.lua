@@ -20,6 +20,7 @@ return {
       require 'servers.emmet'
       require 'servers.marksman'
       require 'servers.zig'
+      -- require 'servers.cpp'
 
       -- Pretty Code Actions with a preview
       require('actions-preview').setup {
