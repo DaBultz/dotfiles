@@ -2,12 +2,18 @@
 
 ## Requirements 
 
-- `git`, `make`, `unzip`, `gcc`
+- `git`, `make`, `unzip`
 - `ripgrep`
 - `fzf` 
 - `node` and `npm` for github copilot
-- `cmake` and GCC or MSVC
-- `Neovide` for Windows, as nvim didn't feel snappy inside powershell
+- `cmake` and GCC or MSVC/gcc/maybe zig?
+
+## Coommand to install all the dependencies
+
+### Windows:
+```bash
+scoop install git make unzip ripgrpe fzf nodejs cmake
+```
 
 ## TODO:
 
@@ -23,6 +29,8 @@
     - Could be a seperate project
 - [ ] Add rainbow delimeters
 - [ ] Increase the color of sentiment.nvim matching
+- [ ] Simplify the config
+- [ ] Improve the ranking of the cmp completion 
 
 ## REDO TODO:
 
