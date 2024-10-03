@@ -10,7 +10,7 @@ return {
     'JoosepAlviste/nvim-ts-context-commentstring',
   },
   config = function()
-    require('nvim-ts-autotag').setup()
+    -- require('nvim-ts-autotag').setup()
     require('ts_context_commentstring').setup {
       enable_autocmd = false,
     }
@@ -37,7 +37,7 @@ return {
       auto_install = true,
       -- Auto Tag
       autotag = {
-        enablle = true,
+        enable = false,
         -- filetypes = {
         --   'html',
         --   'javascript',

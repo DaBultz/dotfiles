@@ -31,7 +31,7 @@ scoop install git make unzip ripgrpe fzf nodejs cmake
 - [ ] Increase the color of sentiment.nvim matching
 - [ ] Simplify the config
 - [ ] Improve the ranking of the cmp completion 
-
+- [ ] Make page jumping jump 75% of the way
 ## REDO TODO:
 
 - [ ] Add eslint Language Server
