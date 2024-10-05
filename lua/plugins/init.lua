@@ -1,4 +1,3 @@
--- These are the plugins that doesn't require much configuration.
 return {
   { 'j-hui/fidget.nvim', opts = {} },
   { 'windwp/nvim-autopairs', event = 'InsertEnter', opts = {} },
@@ -10,19 +9,48 @@ return {
       require('which-key').setup()
 
       -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-      }
+			-- TODO: Move this to the new structure:w
+      -- require('which-key').register {
+      --   ['<leader>c'] = { group = '[C]ode', _ = "which_key_ignore" },
+      --   ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+      --   ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
+      --   ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
+      --   ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+      --   ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+      --   ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+      --   ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
+      --   ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
+      --   ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+      -- }
     end,
   },
-  -- {
-  --   'hiphish/rainbow-delimiters.nvim',
-  --   config = function()
-  --     require('rainbow-delimiters.setup').setup {}
-  --   end,
-  -- },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup {}
+    end,
+  },
+	{
+  'supermaven-inc/supermaven-nvim',
+  config = function()
+    require('supermaven-nvim').setup {
+      disable_inline_completion = true, -- disables inline completion for use with cmp
+      disable_keymaps = true, -- disables built in keymaps for more manual control
+    }
+  end,
+	},
+	{
+
+  'utilyre/sentiment.nvim',
+  version = '*',
+  event = 'VeryLazy', -- keep for lazy loading
+  opts = {
+    -- config
+  },
+  init = function()
+    -- `matchparen.vim` needs to be disabled manually in case of lazy loading
+    vim.g.loaded_matchparen = 1
+  end,
+	}
 }

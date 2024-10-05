@@ -13,11 +13,7 @@ if not vim.g.vscode then
 
     require('lazy').setup('plugins', {})
 end
+
 -- Keymap and autocommands
 require 'keymap'
 require 'autocommands'
-
--- VSCode Specific things
-if vim.g.vscode then
-
-end

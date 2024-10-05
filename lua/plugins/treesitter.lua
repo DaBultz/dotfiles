@@ -3,10 +3,8 @@ return {
   build = ':TSUpdate',
   event = { 'BufReadPost', 'BufNewFile' },
   dependencies = {
-    -- 'nvim-treesitter/nvim-treesitter-textobjects',
-    -- 'nvim-treesitter/nvim-treesitter-refactor',
-    -- 'nvim-treesitter/nvim-treesitter-context',
-    'windwp/nvim-ts-autotag',
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    -- 'windwp/nvim-ts-autotag',
     'JoosepAlviste/nvim-ts-context-commentstring',
   },
   config = function()
@@ -23,35 +21,14 @@ return {
         'markdown_inline',
         'vimdoc',
         -- Web Development
-        'javascript',
-        'typescript',
-        'tsx',
         'json',
-        'css',
-        'html',
         -- Programming
         'zig',
+				'go',
       },
       highlight = { enable = true },
       indent = { enable = true },
-      auto_install = true,
-      -- Auto Tag
-      autotag = {
-        enable = false,
-        -- filetypes = {
-        --   'html',
-        --   'javascript',
-        --   'typescript',
-        --   'javascriptreact',
-        --   'typescriptreact',
-        --   'svelte',
-        --   'vue',
-        --   'tsx',
-        --   'jsx',
-        --   'markdown',
-        --   'astro',
-        -- },
-      },
+      auto_install = false,
     }
   end,
 }

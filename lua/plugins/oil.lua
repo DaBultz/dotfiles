@@ -5,6 +5,7 @@ local hidden_files = {
     '.zig-cache',
     'zig-out',
     '.idea',
+		'tmp',
 }
 
 local function has_value(tab, val)

@@ -11,37 +11,24 @@
 ## Coommand to install all the dependencies
 
 ### Windows:
+
 ```bash
 scoop install git make unzip ripgrpe fzf nodejs cmake
 ```
 
+### Arch
+
+```bash
+yay -s cmake ripgrep fzf cmake base-devel luarocks lua51
+```
+
 ## TODO:
 
-- [ ] Add refactoring support
-    - [ ] `<Leader>rr` to rename the current variable
-    - [ ] Make the edit inlined, and show live preview of the changes 
-- [ ] Add support for `neogit` or other git plugins
-- [ ] Use neovide instead of nvim in terminal
-    - How would this work? with the `--wsl` option? 
-    - How would i open a project hosted in `wsl`? maybe with a project picker, since every project would be inside 1 folder (can be shared on windows)
-- [ ] Windows Support
-- [ ] Automate Setting up development enviornment
-    - Could be a seperate project
-- [ ] Add rainbow delimeters
-- [ ] Increase the color of sentiment.nvim matching
-- [ ] Simplify the config
 - [ ] Improve the ranking of the cmp completion 
-- [ ] Make page jumping jump 75% of the way
+
 ## REDO TODO:
 
-- [ ] Add eslint Language Server
-- [ ] https://github.com/nvimtools/none-ls.nvim
-- [ ] Improve telescope in a monorepo
-    - [ ] By default only search in the current project
-    - [ ] By Appending `..` it will search in the parent project
-    - [ ] Auto discovery of package.jsons
-    - [ ] Switch project using telescope (maybe use sessions)
-- [ ] Improve indent line, so it's close to VSCode
+- [ ] Reduce Packages used
 
 ## Consider:
 
