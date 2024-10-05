@@ -29,18 +29,16 @@ yay -s cmake ripgrep fzf cmake base-devel luarocks lua51
 - [ ] Add Spell Checking
 - [ ] Refactor Support 
 
-## Packages To ConsideR:
+## Packages To Consider:
 
 - https://github.com/ray-x/navigator.lua
 
 ## Consider:
 
-- https://github.com/andersevenrud/nvim_context_vt
 - https://github.com/gregorias/coerce.nvim
-- https://github.com/Wansmer/treesj
-- https://github.com/danymat/neogen
 - https://github.com/ray-x/lsp_signature.nvim
 - https://github.com/nvim-pack/nvim-spectre
+- https://github.com/MagicDuck/grug-far.nvim
 - https://github.com/abecodes/tabout.nvim
 - https://github.com/ggandor/leap.nvim
 - https://github.com/otavioschwanck/arrow.nvim (or hapoon)
