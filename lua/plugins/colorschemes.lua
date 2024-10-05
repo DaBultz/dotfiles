@@ -50,4 +50,8 @@ return {
       -- vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
+  {
+    'wuelnerdotexe/vim-enfocado',
+    config = function() end,
+  },
 }
