@@ -1,25 +1,23 @@
 return {
   'hrsh7th/nvim-cmp',
-	event = 'InsertEnter',
+  event = 'InsertEnter',
   dependencies = {
     'hrsh7th/cmp-nvim-lsp', -- LSP Completion
-	},
-	config = function() 
-		local cmp = require("cmp")
+  },
+  config = function()
+    local cmp = require 'cmp'
 
-		
     local has_words_before = function()
       unpack = unpack or table.unpack
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
       return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
     end
 
-		
-		cmp.setup {
-			sources = {
-				{ name = "nvim_lsp" },
-				{ name = "supermaven" }
-			},
+    cmp.setup {
+      sources = {
+        { name = 'nvim_lsp' },
+        { name = 'supermaven' },
+      },
       mapping = cmp.mapping.preset.insert {
         -- Select the [n]ext item
         ['<M-j>'] = cmp.mapping.select_next_item { behavior = 'Select' },
@@ -67,7 +65,7 @@ return {
         end, { 'i', 's' }),
 
         ['<S-Tab>'] = cmp.mapping(function(fallback)
-          if cmp.visible()  then
+          if cmp.visible() then
             cmp.select_prev_item()
           else
             fallback()
@@ -77,6 +75,6 @@ return {
         -- Manually trigger a completion from nvim-cmp.
         ['<C-Space>'] = cmp.mapping.complete {},
       },
-		}
-	end,
+    }
+  end,
 }
