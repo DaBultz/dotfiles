@@ -1,0 +1,3 @@
+windows:
+  links:
+    wezterm.lua: ~/.wezterm.lua

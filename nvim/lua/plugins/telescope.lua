@@ -1,0 +1,57 @@
+return {
+	"nvim-telescope/telescope.nvim",
+	event = "VimEnter",
+	lazy = false,
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+		},
+	},
+	config = function()
+		-- [[ Configure Telescope ]]
+		-- See `:help telescope` and `:help telescope.setup()`
+		require("telescope").setup({
+			defaults = {
+				mappings = {
+					i = {
+						["<M-j>"] = "move_selection_next",
+						["<M-k>"] = "move_selection_previous",
+					},
+				},
+			},
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown(),
+				},
+				["themes"] = {},
+			},
+			pickers = {
+				colorscheme = {
+					enable_preview = true,
+				},
+			},
+		})
+
+		-- Enable telescope extensions, if they are installed
+		pcall(require("telescope").load_extension, "fzf")
+		pcall(require("telescope").load_extension, "ui-select")
+		pcall(require("telescope").load_extension, "chezmoi")
+		-- See `:help telescope.builtin`
+		local builtin = require("telescope.builtin")
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
+		vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[F]earch current [W]ord" })
+		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind [G]rep" })
+		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
+		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+		vim.keymap.set("n", "<leader>fc", ":Telescope chezmoi find_files<CR>", { desc = "[F]ind [C]hezmoi" })
+		-- Theme Switcher
+		vim.keymap.set(
+			"n",
+			"<leader>th",
+			":Telescope colorscheme<CR>",
+			{ noremap = true, silent = true, desc = "Theme Switcher" }
+		)
+	end,
+}
