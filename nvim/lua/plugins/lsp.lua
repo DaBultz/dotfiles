@@ -30,7 +30,6 @@ return {
 					"jsonls",
 					"yamlls",
 					"mdx_analyzer",
-					"tsp_server",
 					"gopls", -- Installed by go.nvim
 					"marksman",
 				},
