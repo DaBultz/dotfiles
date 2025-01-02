@@ -1,5 +1,7 @@
 windows:
   installs: 
     cmd: scoop install wezterm
+  depends:
+    - prerun
   links:
     wezterm.lua: ~/.wezterm.lua
