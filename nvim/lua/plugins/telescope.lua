@@ -37,7 +37,6 @@ return {
 		-- Enable telescope extensions, if they are installed
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
-		pcall(require("telescope").load_extension, "chezmoi")
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
@@ -45,7 +44,6 @@ return {
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind [G]rep" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
-		vim.keymap.set("n", "<leader>fc", ":Telescope chezmoi find_files<CR>", { desc = "[F]ind [C]hezmoi" })
 		-- Theme Switcher
 		vim.keymap.set(
 			"n",

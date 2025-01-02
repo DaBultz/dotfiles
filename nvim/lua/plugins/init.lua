@@ -126,17 +126,6 @@ return {
 		},
 	},
 	{
-		"xvzc/chezmoi.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("chezmoi").setup({
-				edit = {
-					watch = true,
-				},
-			})
-		end,
-	},
-	{
 		"MagicDuck/grug-far.nvim",
 		config = function()
 			require("grug-far").setup({})
