@@ -142,17 +142,8 @@ return {
 			})
 
 			lspconfig.zls.setup({
-				-- cmd = { "/home/bultz/.zvm/bin/zls" },
-				settings = {
-					zls = {
-						-- zig_exe_path = "/home/bultz/.zvm/bin/zig",
-					},
-				},
+				capabilities = capabilities,
 			})
-
-			-- lspconfig.gopls.setup {
-			--   capabilities = capabilities,
-			-- }
 
 			lspconfig.mdx_analyzer.setup({
 				capabilities = capabilities,
@@ -187,10 +178,6 @@ return {
 					},
 				},
 			})
-
-			-- lspconfig.tsp_server.setup({
-			-- 	capabilities = capabilities,
-			-- })
 
 			--  this function gets run when an lsp attaches to a particular buffer.
 			--    that is to say, every time a new file is opened that is associated with
