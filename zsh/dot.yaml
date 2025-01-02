@@ -1,0 +1,6 @@
+linux:
+  installs:
+    cmd: |
+      sudo pacman -Sy --noconfirm zsh
+      chmod +x ~/.dotfiles/zsh/install.sh
+      ~/.dotfiles/zsh/install.sh
