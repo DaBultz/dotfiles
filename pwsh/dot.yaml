@@ -1,0 +1,5 @@
+windows:
+  depends:
+    - scoop
+  links:
+    profile.ps1: $PROFILE
