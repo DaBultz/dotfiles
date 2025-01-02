@@ -1,0 +1,6 @@
+linux:
+  installs: 
+    cmd: |
+      sudo pacman -Sy --noconfirm base-devel ripgrep fzf 
+
+
