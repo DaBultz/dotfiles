@@ -1,0 +1,12 @@
+# Installs Zig Version Manager
+# https://github.com/tristanisham/zvm
+windows:
+  installs:
+    cmd: |
+      irm https://raw.githubusercontent.com/tristanisham/zvm/master/install.ps1 | iex
+
+linux:
+  installs:
+    cmd: |
+      curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
+
