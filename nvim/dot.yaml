@@ -8,6 +8,8 @@ windows:
     lua: ~\AppData\Local\nvim\lua
 
 linux:
+  installs:
+    cmd: sudo pacman -Sy --noconfirm neovim
   links:
     init.lua: ~/.config/nvim/init.lua
     lua: ~/.config/nvim/lua
