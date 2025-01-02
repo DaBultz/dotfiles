@@ -1,6 +1,12 @@
 linux:
   installs: 
     cmd: |
-      sudo pacman -Sy --noconfirm base-devel ripgrep fzf 
+      sudo pacman -Sy --noconfirm base-devel ripgrep fzf zoxide
+windows:
+  installs:
+    cmd: |
+      scoop install ripgrep
+      scoop install fzf
+      scoop install zoxide
 
 
