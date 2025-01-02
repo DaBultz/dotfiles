@@ -1,6 +1,6 @@
 windows:
   installs:
-    cmd: scoop install nvim 
+    cmd: scoop install neovim 
     depends:
       - scoop
   links:
