@@ -1,12 +1,13 @@
 linux:
   installs: 
     cmd: |
-      sudo pacman -Sy --noconfirm base-devel ripgrep fzf zoxide
+      sudo pacman -Sy --noconfirm base-devel ripgrep fzf zoxide lazygit 
 windows:
   installs:
     cmd: |
       scoop install ripgrep
       scoop install fzf
       scoop install zoxide
+      scoop install lazygit
 
 
