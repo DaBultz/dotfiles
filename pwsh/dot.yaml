@@ -1,5 +1,6 @@
 windows:
-  installs: winget install Microsoft.PowerShell
+  # disabled due to it fails if it's already installed
+  # installs: winget install Microsoft.PowerShell
   links:
     Profile.ps1:
       - ~/Documents/WindowsPowerShell/Profile.ps1
