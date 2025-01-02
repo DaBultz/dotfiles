@@ -1,5 +1,6 @@
 windows:
-  depends:
-    - scoop
+  installs: winget install Microsoft.PowerShell
   links:
-    profile.ps1: $PROFILE
+    Profile.ps1:
+      - ~/Documents/WindowsPowerShell/Profile.ps1
+      - ~/Documents/PowerShell/Profile.ps1
