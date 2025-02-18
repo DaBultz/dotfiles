@@ -1,7 +1,11 @@
 windows:
   # disabled due to it fails if it's already installed
-  # installs: winget install Microsoft.PowerShell
+  # installs: |
+  # - winget install Microsoft.PowerShell 
+  # - winget install JanDeDobbeleer.OhMyPosh -s winget
   links:
     Profile.ps1:
       - ~/Documents/WindowsPowerShell/Profile.ps1
       - ~/Documents/PowerShell/Profile.ps1
+    omp.json:
+      - ~/.oh-my-posh/config.json

@@ -1,7 +1,7 @@
 linux:
   installs: 
     cmd: |
-      sudo pacman -Sy --noconfirm base-devel ripgrep fzf zoxide lazygit 
+      sudo pacman -Sy --noconfirm base-devel ripgrep fzf zoxide lazygit eza
 windows:
   installs:
     cmd: |
@@ -9,5 +9,6 @@ windows:
       scoop install fzf
       scoop install zoxide
       scoop install lazygit
+      scoop install eza
 
 
