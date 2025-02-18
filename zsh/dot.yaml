@@ -1,4 +1,7 @@
 linux:
+  links:
+    .zshrc: 
+      - ~/.zshrc
   installs:
     cmd: |
       sudo pacman -Sy --noconfirm zsh
