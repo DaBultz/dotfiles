@@ -49,10 +49,8 @@ export ZVM_INSTALL="$HOME/.zvm/self"
 export PATH="$PATH:$HOME/.zvm/bin"
 export PATH="$PATH:$ZVM_INSTALL/"
 # -- Update ZVM master and ZLS
-alias zvmup="zvm i master && zvm i --zls --full master"
-
-# Fixes LS colors in windows
-export LS_COLORS=$(echo $LS_COLORS | sed "s/ow=34;42/ow=01;34/g")
+alias zvmup="zvm i --zls --full master"
+alias ls='eza'
 
 export ROTZ_INSTALL="/home/bultz/.rotz"
 export PATH="$ROTZ_INSTALL/bin:$PATH"
