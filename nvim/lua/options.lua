@@ -1,9 +1,9 @@
 -- Set the map leader, this is required before lazy
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Share clipboard between vim and OS
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 -- Make line numbers default
 vim.opt.number = true
@@ -25,5 +25,5 @@ vim.opt.pumheight = 15 -- this controlls how many lines the popup menu has
 vim.opt.scrolloff = 5
 
 -- Spell checker
-vim.opt.spelllang = 'en_us'
+vim.opt.spelllang = "en_us"
 vim.opt.spell = true

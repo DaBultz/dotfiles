@@ -39,7 +39,6 @@ yay -s cmake ripgrep fzf cmake base-devel luarocks lua51
 - https://github.com/ray-x/lsp_signature.nvim
 - https://github.com/nvim-pack/nvim-spectre
 - https://github.com/MagicDuck/grug-far.nvim
-- https://github.com/abecodes/tabout.nvim
 - https://github.com/ggandor/leap.nvim
 - https://github.com/otavioschwanck/arrow.nvim (or hapoon)
 

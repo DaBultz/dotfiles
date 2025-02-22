@@ -77,17 +77,6 @@ return {
 		end,
 	},
 	{
-		-- TODO: Make this work with CMP, right now it doesn't work while cmp window is open
-		"abecodes/tabout.nvim",
-		enabled = false,
-		event = "InsertCharPre",
-		config = function()
-			require("tabout").setup({
-				completion = true,
-			})
-		end,
-	},
-	{
 		-- See: :h nvim-surround.usage
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -111,25 +100,13 @@ return {
 		},
 	},
 	{
-		{
-			"folke/flash.nvim",
-			event = "VeryLazy",
-			---@type Flash.Config
-			opts = {},
-			-- stylua: ignore
-			keys = {
-				{ "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
-				{ "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
-				{ "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
-				{ "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-				{ "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
-			},
-		},
-	},
-	{
 		"MagicDuck/grug-far.nvim",
 		config = function()
 			require("grug-far").setup({})
 		end,
+	},
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false,
 	},
 }

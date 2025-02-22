@@ -6,6 +6,8 @@ windows:
   links:
     init.lua: ~\AppData\Local\nvim\init.lua
     lua: ~\AppData\Local\nvim\lua
+    after: ~\AppData\Local\nvim\after
+
 
 linux:
   installs:

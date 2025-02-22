@@ -5,10 +5,8 @@ linux:
 windows:
   installs:
     cmd: |
-      scoop install ripgrep
-      scoop install fzf
-      scoop install zoxide
+      scoop install ffmpeg 7zip jq poppler fd ripgrep fzf zoxide imagemagick
       scoop install lazygit
       scoop install eza
-
+      scoop install yazi
 
