@@ -22,6 +22,7 @@ return {
 				"vimdoc",
 				-- Web Development
 				"json",
+				"yaml",
 				-- Programming
 				"zig",
 				-- Go

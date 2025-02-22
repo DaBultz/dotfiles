@@ -1,0 +1,19 @@
+Windows Registry Editor Version 5.00
+ 
+[HKEY_CLASSES_ROOT\Drive\shell]
+@="open_in_filepilot"
+ 
+[HKEY_CLASSES_ROOT\Drive\shell\open_in_filepilot]
+ @="Open in FilePilot"
+ 
+[HKEY_CLASSES_ROOT\Drive\shell\open_in_filepilot\command]
+@="C:\\Users\\testm\\AppData\\Local\\Voidstar\\FilePilot\\FPilot.exe \"%1\""
+ 
+[HKEY_CLASSES_ROOT\Directory\shell]
+@="open_in_filepilot"
+ 
+[HKEY_CLASSES_ROOT\Directory\shell\open_in_filepilot]
+@="Open in FilePilot"
+ 
+[HKEY_CLASSES_ROOT\Directory\shell\open_in_filepilot\command]
+@="C:\\Users\\testm\\AppData\\Local\\Voidstar\\FilePilot\\FPilot.exe \"%1\""
