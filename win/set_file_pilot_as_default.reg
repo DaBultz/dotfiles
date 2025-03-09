@@ -7,7 +7,7 @@ Windows Registry Editor Version 5.00
  @="Open in FilePilot"
  
 [HKEY_CLASSES_ROOT\Drive\shell\open_in_filepilot\command]
-@="C:\\Users\\testm\\AppData\\Local\\Voidstar\\FilePilot\\FPilot.exe \"%1\""
+@="C:\\Users\\testm\\AppData\\Local\\Voidstar\\FilePilot\\FPilot.exe \"%V\""
  
 [HKEY_CLASSES_ROOT\Directory\shell]
 @="open_in_filepilot"
@@ -16,4 +16,4 @@ Windows Registry Editor Version 5.00
 @="Open in FilePilot"
  
 [HKEY_CLASSES_ROOT\Directory\shell\open_in_filepilot\command]
-@="C:\\Users\\testm\\AppData\\Local\\Voidstar\\FilePilot\\FPilot.exe \"%1\""
+@="C:\\Users\\testm\\AppData\\Local\\Voidstar\\FilePilot\\FPilot.exe \"%V\""
