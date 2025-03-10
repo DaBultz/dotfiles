@@ -31,6 +31,8 @@ return {
 				"gosum",
 				"gowork",
 				"sql",
+				-- Research
+				"ruby",
 			},
 			highlight = { enable = true },
 			indent = { enable = true },

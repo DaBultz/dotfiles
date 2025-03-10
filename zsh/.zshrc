@@ -50,11 +50,14 @@ export PATH="$PATH:$HOME/.zvm/bin"
 export PATH="$PATH:$ZVM_INSTALL/"
 # -- Update ZVM master and ZLS
 alias zvmup="zvm i --zls --full master"
-alias ls='eza'
+alias ls='eza --group-directories-first'
 
 export ROTZ_INSTALL="/home/bultz/.rotz"
 export PATH="$ROTZ_INSTALL/bin:$PATH"
+alias r="rails"
 
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

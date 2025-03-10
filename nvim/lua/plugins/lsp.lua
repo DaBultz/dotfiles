@@ -112,7 +112,8 @@ return {
 			})
 
 			-- Register Language Servers
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
+			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
 			lspconfig.lua_ls.setup({
@@ -178,6 +179,12 @@ return {
 					},
 				},
 			})
+
+			lspconfig.ruby_lsp.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.rubocop.setup({})
 
 			--  this function gets run when an lsp attaches to a particular buffer.
 			--    that is to say, every time a new file is opened that is associated with

@@ -1,20 +1,20 @@
-require 'options'
+require("options")
 
 if not vim.g.vscode then
-  -- Install lazy
-  local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+	-- Install lazy
+	local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-  if not vim.loop.fs_stat(lazypath) then
-    local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-    vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-  end ---@diagnostic disable-next-line: undefined-field
+	if not vim.loop.fs_stat(lazypath) then
+		local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+		vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	end ---@diagnostic disable-next-line: undefined-field
 
-  vim.opt.rtp:prepend(lazypath)
+	vim.opt.rtp:prepend(lazypath)
 
-  require('lazy').setup('plugins', {})
+	require("lazy").setup("plugins", {})
 end
 
 -- Keymap and autocommands
-require 'keymap'
-require 'autocommands'
-require 'colorscheme'
+require("keymap")
+require("autocommands")
+require("colorscheme")
