@@ -1,7 +1,14 @@
 return {
-	{ "j-hui/fidget.nvim", opts = {} },
 	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
 	{ "lukas-reineke/virt-column.nvim", opts = {} },
+	{
+		"folke/noice.nvim",
+		opts = {
+			presets = {
+				lsp_doc_border = true,
+			},
+		},
+	},
 	{ -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'

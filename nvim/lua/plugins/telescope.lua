@@ -20,6 +20,9 @@ return {
 						["<M-k>"] = "move_selection_previous",
 					},
 				},
+				file_ignore_patterns = {
+					"^sorbet/",
+				},
 			},
 			extensions = {
 				["ui-select"] = {

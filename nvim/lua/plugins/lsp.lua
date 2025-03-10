@@ -184,6 +184,10 @@ return {
 				capabilities = capabilities,
 			})
 
+			lspconfig.sorbet.setup({
+				cmd = { "bundle", "exec", "srb", "tc", "--lsp" },
+			})
+
 			lspconfig.rubocop.setup({})
 
 			--  this function gets run when an lsp attaches to a particular buffer.
@@ -242,7 +246,7 @@ return {
 
 					-- opens a popup that displays documentation about the word under your cursor
 					--  see `:help k` for why this keymaplsp
-					-- map('K', vim.lsp.buf.hover, 'hover documentation')
+					map("K", vim.lsp.buf.hover, "hover documentation")
 
 					map("]d", vim.diagnostic.goto_next, "next diagnostic")
 
