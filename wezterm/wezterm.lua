@@ -9,19 +9,25 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
 
 config.color_scheme = "Rosé Pine (Gogh)"
--- config.font = wezterm.font("Victor Mono", {
--- 	weight = "Medium",
--- })
 
-config.font = wezterm.font("IBM Plex Mono", {
-	weight = "Regular",
-})
+local font = "IBM"
+local ligatures = false
+
+if font == "Fira Code" then
+	config.font = wezterm.font("Fira Code", {
+		weight = 300,
+		harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
+	})
+elseif font == "IBM" then
+	config.font = wezterm.font("IBM Plex Mono", {
+		weight = "Regular",
+	})
+	config.freetype_load_target = "Light"
+end
 
 config.max_fps = 160
 
 config.font_size = 14
--- config.font_size = 18
-config.freetype_load_target = "Light"
 
 config.window_padding = {
 	top = 2,
