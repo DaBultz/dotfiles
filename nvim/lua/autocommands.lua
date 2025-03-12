@@ -23,6 +23,12 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	desc = "Set filetype for jbuilder file",
+	pattern = "*.json.jbuilder",
+	command = "set filetype=ruby",
+})
+
 -- Reset the terminal colors on exit
 vim.api.nvim_create_autocmd("UILeave", {
 	callback = function()

@@ -27,6 +27,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+eval "$(~/.local/bin/mise activate)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env --use-on-cd --shell zsh --corepack-enabled)"
 
@@ -58,6 +59,10 @@ alias r="rails"
 
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
+
+source $HOME/.zprofile
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 

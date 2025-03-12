@@ -5,7 +5,7 @@ return {
 		"folke/noice.nvim",
 		opts = {
 			cmdline = {
-				enabled = false,
+				enabled = true,
 			},
 			presets = {
 				lsp_doc_border = true,

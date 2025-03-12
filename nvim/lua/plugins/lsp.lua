@@ -50,6 +50,8 @@ return {
 					null_ls.builtins.formatting.gofmt,
 					null_ls.builtins.formatting.goimports_reviser,
 					null_ls.builtins.diagnostics.golangci_lint,
+					-- Ruby
+					null_ls.builtins.formatting.rubocop,
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
@@ -188,7 +190,10 @@ return {
 				cmd = { "bundle", "exec", "srb", "tc", "--lsp" },
 			})
 
-			lspconfig.rubocop.setup({})
+			lspconfig.rubocop.setup({
+				-- TODO: Get Rubocop to format instead of relying on none-ls
+				cmd = { "bundle", "exec", "rubocop", "--lsp" },
+			})
 
 			--  this function gets run when an lsp attaches to a particular buffer.
 			--    that is to say, every time a new file is opened that is associated with
