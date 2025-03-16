@@ -37,9 +37,9 @@ vim.api.nvim_create_autocmd("UILeave", {
 })
 
 -- Set the terminal colors on colorscheme, this works on WezTerm
-vim.api.nvim_create_autocmd("ColorScheme", {
-	callback = function()
-		local bg = vim.api.nvim_get_hl(0, { name = "Normal", link = false }).bg
-		io.stdout:write(("\027]11;#%06x\027\\"):format(bg))
-	end,
-})
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+-- 	callback = function()
+-- 		local bg = vim.api.nvim_get_hl(0, { name = "Normal", link = false }).bg
+-- 		io.stdout:write(("\027]11;#%06x\027\\"):format(bg))
+-- 	end,
+-- })

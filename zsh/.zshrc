@@ -53,6 +53,10 @@ export PATH="$PATH:$ZVM_INSTALL/"
 alias zvmup="zvm i --zls --full master"
 alias ls='eza --group-directories-first'
 
+vivaldi() {
+	/mnt/c/Users/testm/AppData/Local/Vivaldi/Application/vivaldi.exe "$(wslpath -w $(realpath $1))"
+}
+
 export ROTZ_INSTALL="/home/bultz/.rotz"
 export PATH="$ROTZ_INSTALL/bin:$PATH"
 alias r="rails"
