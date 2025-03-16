@@ -10,7 +10,7 @@ config.window_decorations = "RESIZE"
 
 config.color_scheme = "Rosé Pine (Gogh)"
 
-local font = "IBM"
+local font = "JetBrains"
 local ligatures = false
 
 if font == "Fira Code" then
@@ -23,6 +23,10 @@ elseif font == "IBM" then
 		weight = "Regular",
 	})
 	config.freetype_load_target = "Light"
+elseif font == "JetBrains" then
+	config.font = wezterm.font("JetBrains Mono", {
+		weight = 300,
+	})
 end
 
 config.max_fps = 160
