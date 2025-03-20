@@ -1,6 +1,4 @@
 return {
-	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
-	{ "lukas-reineke/virt-column.nvim", opts = {} },
 	{
 		"folke/noice.nvim",
 		opts = {
@@ -36,6 +34,7 @@ return {
 	},
 	{
 		"windwp/nvim-autopairs",
+		enabled = true,
 		event = "InsertEnter",
 		config = true,
 		-- use opts = {} for passing setup options
@@ -46,35 +45,6 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("lualine").setup({})
-		end,
-	},
-	{
-
-		"utilyre/sentiment.nvim",
-		version = "*",
-		event = "VeryLazy", -- keep for lazy loading
-		opts = {
-			-- config
-		},
-		init = function()
-			-- `matchparen.vim` needs to be disabled manually in case of lazy loading
-			vim.g.loaded_matchparen = 1
-		end,
-	},
-	{
-		"stevearc/conform.nvim",
-		enable = false,
-		opts = {},
-		config = function()
-			require("conform").setup({
-				formatters_by_ft = {
-					lua = { "stylua" },
-				},
-				format_on_save = {
-					timeout_ms = 500,
-					lsp_fallback = "fallback",
-				},
-			})
 		end,
 	},
 	{
@@ -99,12 +69,6 @@ return {
 				desc = "Diagnostics (Trouble)",
 			},
 		},
-	},
-	{
-		"MagicDuck/grug-far.nvim",
-		config = function()
-			require("grug-far").setup({})
-		end,
 	},
 	{
 		"OXY2DEV/markview.nvim",

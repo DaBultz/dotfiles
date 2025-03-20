@@ -27,3 +27,8 @@ vim.opt.scrolloff = 5
 -- Spell checker
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
+
+-- disabled the diagnostic virtual text as it's redundant due to lsp-lines
+vim.diagnostic.config({
+	virtual_text = false,
+})

@@ -1,5 +1,11 @@
 return {
 	{
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	},
+	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
 		dependencies = {
@@ -115,7 +121,6 @@ return {
 
 			-- Register Language Servers
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
-			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
 			lspconfig.lua_ls.setup({
