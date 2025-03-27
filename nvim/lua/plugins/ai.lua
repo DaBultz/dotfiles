@@ -9,12 +9,4 @@ return {
 			})
 		end,
 	},
-	{
-		"augmentcode/augment.vim",
-		config = function()
-			vim.g.augment_workspace_folders = {
-				"~/projects/zdb-api",
-			}
-		end,
-	},
 }
