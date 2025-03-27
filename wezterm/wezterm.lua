@@ -10,7 +10,7 @@ config.window_decorations = "RESIZE"
 
 config.color_scheme = "Rosé Pine (Gogh)"
 
-local font = "JetBrains"
+local font = "CommitMono"
 local ligatures = false
 
 if font == "Fira Code" then
@@ -26,6 +26,11 @@ elseif font == "IBM" then
 elseif font == "JetBrains" then
 	config.font = wezterm.font("JetBrains Mono", {
 		weight = 300,
+	})
+elseif font == "CommitMono" then
+	config.font = wezterm.font("CommitMono", {
+		weight = 400,
+		-- harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
 	})
 end
 

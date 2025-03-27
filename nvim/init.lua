@@ -12,13 +12,13 @@ end ---@diagnostic disable-next-line: undefined-field
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins", {})
-
--- Keymap and autocommands
-require("keymap")
-require("autocommands")
-require("colorscheme")
-
 if vim.g.vscode then
-	require("vscode")
+	require("lazy").setup("vscode_plugins", {})
+	require("vscode_options")
+else
+	require("lazy").setup("plugins", {})
+	-- Keymap and autocommands
+	require("keymap")
+	require("autocommands")
+	require("colorscheme")
 end
