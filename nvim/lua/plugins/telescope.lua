@@ -39,7 +39,6 @@ return {
 
 		-- Enable telescope extensions, if they are installed
 		pcall(require("telescope").load_extension, "fzf")
-		pcall(require("telescope").load_extension, "ui-select")
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
@@ -47,12 +46,5 @@ return {
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind [G]rep" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
-		-- Theme Switcher
-		vim.keymap.set(
-			"n",
-			"<leader>th",
-			":Telescope colorscheme<CR>",
-			{ noremap = true, silent = true, desc = "Theme Switcher" }
-		)
 	end,
 }

@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 if vim.g.vscode then
 	require("lazy").setup("vscode_plugins", {})
+	require("vscode_options")
 else
 	require("lazy").setup("plugins", {})
 	-- Keymap and autocommands
