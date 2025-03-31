@@ -57,6 +57,10 @@ vivaldi() {
 	/mnt/c/Users/testm/AppData/Local/Vivaldi/Application/vivaldi.exe "$(wslpath -w $(realpath $1))"
 }
 
+windsurf() {
+	/mnt/c/Users/testm/AppData/Local/Programs/Windsurf/bin/windsurf --folder-uri "vscode-remote://wsl+Arch$(realpath $1)"
+}
+
 export ROTZ_INSTALL="/home/bultz/.rotz"
 export PATH="$ROTZ_INSTALL/bin:$PATH"
 alias r="rails"
