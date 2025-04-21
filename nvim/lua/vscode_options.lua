@@ -9,6 +9,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	desc = "Disable spell checker",
+	command = "set nospell",
+})
 vim.cmd("set nospell")
 
 local opts = { noremap = true, silent = true }
@@ -17,6 +21,10 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+-- This stops VSCode from unfolding folded code
+vim.api.nvim_set_keymap("n", "j", "gj", { noremap = false, silent = true })
+vim.api.nvim_set_keymap("n", "k", "gk", { noremap = false, silent = true })
 
 -- TIP: Disable arrow keys in normal mode
 vim.keymap.set("n", "<left>", '<cmd>echo "use h to move!!"<cr>')
@@ -36,3 +44,11 @@ vim.keymap.set("n", "<M-h>", "<Cmd>lua require('vscode').action('workbench.actio
 vim.keymap.set("n", "<M-j>", "<Cmd>lua require('vscode').action('workbench.action.navigateDown')<CR>")
 vim.keymap.set("n", "<M-k>", "<Cmd>lua require('vscode').action('workbench.action.navigateUp')<CR>")
 vim.keymap.set("n", "<M-l>", "<Cmd>lua require('vscode').action('workbench.action.navigateRight')<CR>")
+
+-- vim.keymap.set("n", "zM", "editor.foldAll")
+-- vim.keymap.set("n", "zR", "editor.unfoldAll")
+-- vim.keymap.set("n", "zc", "editor.fold")
+-- vim.keymap.set("n", "zC", "editor.foldRecursively")
+-- vim.keymap.set("n", "zo", "editor.unfold")
+-- vim.keymap.set("n", "zO", "editor.unfoldRecursively")
+-- vim.keymap.set("n", "za", "editor.toggleFold")
