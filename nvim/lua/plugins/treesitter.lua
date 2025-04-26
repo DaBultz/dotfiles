@@ -3,12 +3,9 @@ return {
 	build = ":TSUpdate",
 	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		-- 'windwp/nvim-ts-autotag',
 		"JoosepAlviste/nvim-ts-context-commentstring",
 	},
 	config = function()
-		-- require('nvim-ts-autotag').setup()
 		require("ts_context_commentstring").setup({
 			enable_autocmd = false,
 		})
@@ -20,22 +17,21 @@ return {
 				"markdown",
 				"markdown_inline",
 				"vimdoc",
-				-- Web Development
+				-- Data Formats
 				"json",
 				"yaml",
-				-- Programming
-				"zig",
-				-- Go
-				"go",
-				"gomod",
-				"gosum",
-				"gowork",
+				-- Databases
 				"sql",
-				-- Research
-				"ruby",
+				-- Elixir
+				"elixir",
+				"heex",
+				"surface",
+				"eex",
+				-- Other Languages
+				"ruby"
 			},
 			highlight = { enable = true },
-			indent = { enable = true },
+			indent = { enable = false },
 			auto_install = false,
 		})
 	end,

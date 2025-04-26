@@ -22,13 +22,19 @@ vim.opt.shiftwidth = 2
 vim.opt.pumheight = 15 -- this controlls how many lines the popup menu has
 
 -- Keep cursor centoer
-vim.opt.scrolloff = 5
+vim.opt.scrolloff = 10
 
 -- Spell checker
 vim.opt.spelllang = "en_us"
-vim.opt.spell = true
+vim.opt.spell = false
 
--- disabled the diagnostic virtual text as it's redundant due to lsp-lines
 vim.diagnostic.config({
-	virtual_text = false,
+	virtual_text = true,
+})
+
+-- File types
+vim.filetype.add({
+	extension = {
+		rbi = "ruby",
+	},
 })

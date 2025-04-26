@@ -20,5 +20,4 @@ else
 	-- Keymap and autocommands
 	require("keymap")
 	require("autocommands")
-	require("colorscheme")
 end
