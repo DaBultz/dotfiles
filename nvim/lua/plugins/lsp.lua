@@ -42,7 +42,7 @@ return {
 
 				-- fuzzy find all the symbols in your current workspace
 				--  similar to document symbols, except searches over your whole project.
-				map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols(), "[w]orkspace [s]ymbols")
+				map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[w]orkspace [s]ymbols")
 
 				map("<leader>dd", require("telescope.builtin").diagnostics, "[d]ocument [d]iagnostics")
 
