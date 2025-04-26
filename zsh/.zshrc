@@ -63,10 +63,10 @@ windsurf() {
 
 export ROTZ_INSTALL="/home/bultz/.rotz"
 export PATH="$ROTZ_INSTALL/bin:$PATH"
-alias r="rails"
 
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
+export PATH="$PATH:$HOME/.mix/escripts"
 
 source $HOME/.zprofile
 
