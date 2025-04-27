@@ -8,6 +8,7 @@ return {
 	{
 		"saghen/blink.cmp",
 		dependencies = {
+			"fang2hou/blink-copilot",
 			"echasnovski/mini.icons",
 		},
 		version = "1.*",
@@ -53,21 +54,27 @@ return {
 				},
 			},
 			sources = {
-				default = { "lazydev", "lsp", "path", "snippets"},
+				default = { "lazydev", "lsp", "path", "snippets", "copilot" },
 				providers = {
 					lazydev = {
 						name = "LazyDev",
-            module = "lazydev.integrations.blink",
-            -- make lazydev completions top priority (see `:h blink.cmp`)
-            score_offset = 100,
-          }
-        }
+						module = "lazydev.integrations.blink",
+						-- make lazydev completions top priority (see `:h blink.cmp`)
+						score_offset = 100,
+					},
+					copilot = {
+						name = "copilot",
+						module = "blink-copilot",
+						score_offset = 100,
+						async = true,
+					},
+				},
 			},
 			completion = {
 				menu = {
 					border = "rounded",
 					min_width = 30,
-          draw = {
+					draw = {
 						treesitter = { "lsp" },
 						gap = 2,
 					},
@@ -77,7 +84,7 @@ return {
 					auto_show = true,
 					auto_show_delay_ms = 0,
 					window = {
-						border = "rounded"
+						border = "rounded",
 					},
 				},
 				ghost_text = {
@@ -93,10 +100,10 @@ return {
 			signature = {
 				enabled = true,
 				window = {
-					border = "rounded"
-				}
+					border = "rounded",
+				},
 			},
-			fuzzy = { implementation = "prefer_rust_with_warning" }
-		}
-	}
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+		},
+	},
 }
