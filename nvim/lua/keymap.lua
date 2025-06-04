@@ -14,4 +14,10 @@ vim.keymap.set("n", "<M-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<M-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- vim.keymap.set('n', '<Leader>ex', vim.cmd.Ex, { desc = 'Open File Exploere' })
-vim.keymap.set("n", "<Leader>ex", "<CMD>Oil<CR>", { desc = "Open File Exploere" })
+-- vim.keymap.set("n", "<Leader>ex", "<CMD>Oil<CR>", { desc = "Open File Exploere" })
+
+-- Disable search
+-- vim.keymap.set("n", "<Esc>", ':let @/ = ""<CR>')
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
+
+vim.keymap.set("n", "<M-e>", vim.diagnostic.open_float)

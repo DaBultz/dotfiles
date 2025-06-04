@@ -6,7 +6,7 @@
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank()
 	end,
@@ -40,5 +40,16 @@ vim.api.nvim_create_autocmd("UIEnter", {
 	callback = function()
 		local bg = vim.api.nvim_get_hl(0, { name = "Normal", link = false }).bg
 		io.stdout:write(("\027]11;#%06x\027\\"):format(bg))
+	end,
+})
+
+-- This ensures that mini.files closes if i try to open telescope
+vim.api.nvim_create_autocmd("User", {
+	pattern = "TelescopeFindPre",
+	callback = function()
+		local ok, mini_files = pcall(require, "mini.files")
+		if ok then
+			mini_files.close()
+		end
 	end,
 })

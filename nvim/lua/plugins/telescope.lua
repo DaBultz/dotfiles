@@ -24,17 +24,8 @@ return {
 					"^sorbet/",
 				},
 			},
-			extensions = {
-				["ui-select"] = {
-					require("telescope.themes").get_dropdown(),
-				},
-				["themes"] = {},
-			},
-			pickers = {
-				colorscheme = {
-					enable_preview = true,
-				},
-			},
+			extensions = {},
+			pickers = {},
 		})
 
 		-- Enable telescope extensions, if they are installed

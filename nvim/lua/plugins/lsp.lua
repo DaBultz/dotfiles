@@ -5,6 +5,21 @@ return {
 		vim.lsp.enable("ruby_lsp")
 		vim.lsp.enable("sorbet")
 
+		vim.lsp.enable("elixirls")
+		vim.lsp.config("elixirls", {
+			cmd = { "/home/bultz/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
+		})
+
+		-- vim.lsp.enable("nextls")
+		vim.lsp.config("nextls", {
+			cmd = { "/home/bultz/.local/share/nvim/mason/packages/nextls/next_ls_linux_amd64", "--stdio" },
+			init_options = {
+				experimental = {
+					completions = { enable = true },
+				},
+			},
+		})
+
 		vim.api.nvim_create_autocmd("lspattach", {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 			callback = function(event)
