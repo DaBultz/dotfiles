@@ -10,7 +10,7 @@ fi
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+# export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
 # Disable beep
 unsetopt BEEP
