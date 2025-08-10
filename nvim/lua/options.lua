@@ -38,3 +38,5 @@ vim.filetype.add({
 		rbi = "ruby",
 	},
 })
+
+vim.opt.swapfile = false -- Disable swap files
