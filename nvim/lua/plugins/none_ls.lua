@@ -7,9 +7,8 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				-- Ruby
-				null_ls.builtins.formatting.rubocop,
 				-- Elixir
+				null_ls.builtins.formatting.clang_format,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then

@@ -22,6 +22,7 @@ return {
 				},
 				file_ignore_patterns = {
 					"^sorbet/",
+					"vendor",
 				},
 			},
 			extensions = {},

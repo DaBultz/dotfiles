@@ -1,0 +1,41 @@
+"" -- Suggested options --
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+set relativenumber
+set which-key
+
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+set clipboard^=unnamedplus
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+let mapleader = " "
+
+"" Move between splits
+nmap <M-h> <C-w>h
+nmap <M-l> <C-w>l
+
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fg <Action>(FindInPath)
+
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>cr <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>rr <Action>(RenameElement)
+
+map U <C-r>
+
+nmap <leader>zz <Action>(IdeaVim.ReloadVimRc.reload)
+
+map <A-j> <Action>(EditorDown)
+map <A-k> <Action>(EditorUp)
+

@@ -1,6 +1,24 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+-- https://github.com/MLFlexer/smart_workspace_switcher.wezterm
+local sessionizer = wezterm.plugin.require("https://github.com/mikkasendke/sessionizer.wezterm")
+
+-- TODO:
+-- Have it find both things in windows and WSL, if i open a folder in windows
+-- it should open a new workspace or use existing one, in the same domain.
+--
+-- Example: if i open D:/projects in windows, it should start in a powershell shell
+-- Example: if i open ~/projects in WSL, it should start in WSL
+--
+local sessionizer_schema = {
+	sessionizer.DefaultWorkspace({}),
+	sessionizer.AllActiveWorkspaces({}),
+	sessionizer.FdSearch("D:/projects/"),
+	sessionizer.FdSearch("D:/probe/"),
+	sessionizer.FdSearch("C:/Users/testm/.dotfiles/"),
+}
+
 -- Find out how to set the default shell to be msys2
 config.default_prog = { "pwsh.exe" }
 
@@ -11,7 +29,6 @@ config.window_decorations = "RESIZE"
 config.color_scheme = "Rosé Pine (Gogh)"
 
 local font = "CommitMono"
-local ligatures = false
 
 if font == "Fira Code" then
 	config.font = wezterm.font("Fira Code", {
@@ -35,7 +52,6 @@ elseif font == "CommitMono" then
 end
 
 config.max_fps = 160
-
 config.font_size = 14
 
 config.window_padding = {
@@ -46,25 +62,40 @@ config.window_padding = {
 }
 
 -- multiplexer setup
-local leader = "ALT"
+config.leader = { key = "LeftAlt", mods = "NONE" }
 
 config.keys = {
 	{
-		mods = leader,
+		mods = "ALT",
 		key = "c",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
 	{
-		mods = leader,
+		mods = "ALT",
 		key = "x",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
+	{
+		mods = "ALT",
+		key = "s",
+		action = sessionizer.show(sessionizer_schema),
+	},
+	-- {
+	-- 	mods = "ALT",
+	-- 	key = "s",
+	-- 	action = workspace_switcher.switch_workspace(),
+	-- },
+	-- {
+	-- 	mods = "ALT",
+	-- 	key = "S",
+	-- 	action = workspace_switcher.switch_to_prev_workspace(),
+	-- },
 }
 
 for i = 1, 9 do
 	-- leader + number to activate that tab
 	table.insert(config.keys, {
-		mods = leader,
+		mods = "ALT",
 		key = tostring(i),
 		action = wezterm.action.ActivateTab(i - 1),
 	})

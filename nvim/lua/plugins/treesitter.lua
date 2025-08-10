@@ -4,6 +4,7 @@ return {
 	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		"JoosepAlviste/nvim-ts-context-commentstring",
+		"code-biscuits/nvim-biscuits",
 	},
 	config = function()
 		require("ts_context_commentstring").setup({
@@ -28,11 +29,21 @@ return {
 				"surface",
 				"eex",
 				-- Other Languages
-				"ruby"
+				"ruby",
+				-- Systems
+				"cpp",
+				"c",
+				"glsl",
+				"doxygen",
+				"odin",
 			},
 			highlight = { enable = true },
 			indent = { enable = false },
-			auto_install = false,
+			auto_install = true,
+		})
+
+		require("nvim-biscuits").setup({
+			cursor_line_only = true,
 		})
 	end,
 }

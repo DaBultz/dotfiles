@@ -1,12 +1,15 @@
 local ignored_folders = {
 	".git",
 	"node_modules",
-	"build",
+	-- "build",
 	"_build",
 	"dist",
 	".elixir_ls",
 	".elixir-tools",
 	"deps",
+	".xmake",
+	".cache",
+	".vscode",
 	-- Add any other folder names you want to ignore
 }
 

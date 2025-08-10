@@ -11,9 +11,13 @@ return {
 				-- Lua
 				"lua-language-server",
 				"stylua",
-				--
+				-- Elixir
 				"elixir-ls",
 				"nextls",
+				-- Systems programming
+				"clangd",
+				"clang-format",
+				"ols",
 			},
 		})
 	end,

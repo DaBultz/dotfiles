@@ -1,15 +1,16 @@
 return {
-	{
-		"CopilotC-Nvim/CopilotChat.nvim",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim", branch = "master" },
-		},
-		build = "make tiktoken", -- Only on MacOS or Linux
-		opts = {},
-	},
+	-- {
+	-- 	"CopilotC-Nvim/CopilotChat.nvim",o
+	-- 	dependencies = {
+	-- 		{ "nvim-lua/plenary.nvim", branch = "master" },
+	-- 	},
+	-- 	build = "make tiktoken", -- Only on MacOS or Linux
+	-- 	opts = {},
+	-- },
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
+		-- enabled = false,
 		event = "InsertEnter",
 		opts = {
 			suggestion = { enabled = false },
