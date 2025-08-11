@@ -57,6 +57,33 @@ return {
 			cmd = { "/home/bultz/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
 		})
 
+		vim.lsp.enable("tailwindcss")
+
+		vim.lsp.enable("emmet-language-server")
+		vim.lsp.config("emmet-language-server", {
+			filetypes = {
+				"astro",
+				"css",
+				"eruby",
+				"html",
+				"htmlangular",
+				"htmldjango",
+				"javascriptreact",
+				"less",
+				"pug",
+				"sass",
+				"scss",
+				"svelte",
+				"templ",
+				"typescriptreact",
+				"vue",
+				-- Elixir
+				"heex",
+				"eelixir",
+				"eex",
+			},
+		})
+
 		-- vim.lsp.enable("nextls")
 		vim.lsp.config("nextls", {
 			cmd = { "/home/bultz/.local/share/nvim/mason/packages/nextls/next_ls_linux_amd64", "--stdio" },
@@ -65,6 +92,11 @@ return {
 					completions = { enable = true },
 				},
 			},
+		})
+
+		-- vim.lsp.enable("lexical")
+		vim.lsp.config("lexical", {
+			cmd = { "/home/bultz/probe/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
 		})
 
 		vim.lsp.enable("clangd")

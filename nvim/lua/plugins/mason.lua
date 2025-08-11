@@ -13,11 +13,11 @@ return {
 				"stylua",
 				-- Elixir
 				"elixir-ls",
-				"nextls",
+				"tailwindcss-language-server",
+				"emmet-language-server",
 				-- Systems programming
 				"clangd",
 				"clang-format",
-				"ols",
 			},
 		})
 	end,

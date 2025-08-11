@@ -82,4 +82,16 @@ return {
 			vim.cmd.colorscheme("vague")
 		end,
 	},
+	{
+		"olimorris/onedarkpro.nvim",
+		priority = 1000, -- Ensure it loads first
+	},
+	{
+		"gbprod/nord.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- require("nord").setup({})
+		end,
+	},
 }

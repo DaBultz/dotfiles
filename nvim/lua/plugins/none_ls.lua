@@ -9,6 +9,7 @@ return {
 				null_ls.builtins.formatting.stylua,
 				-- Elixir
 				null_ls.builtins.formatting.clang_format,
+				null_ls.builtins.formatting.mix,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
