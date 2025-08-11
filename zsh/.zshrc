@@ -52,6 +52,7 @@ export PATH="$PATH:$ZVM_INSTALL/"
 # -- Update ZVM master and ZLS
 alias zvmup="zvm i --zls --full master"
 alias ls='eza --group-directories-first'
+alias vi="nvim"
 
 vivaldi() {
 	/mnt/c/Users/testm/AppData/Local/Vivaldi/Application/vivaldi.exe "$(wslpath -w $(realpath $1))"
