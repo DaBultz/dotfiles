@@ -45,6 +45,9 @@ return {
 			})
 
 			require("nvim-biscuits").setup({
+			default_config = {
+				prefix_string = "-> ",
+			},
 				cursor_line_only = true,
 			})
 
