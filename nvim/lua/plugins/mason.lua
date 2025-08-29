@@ -12,6 +12,7 @@ return {
 				"lua-language-server",
 				"stylua",
 				-- Elixir
+				"typescript-language-server",
 				"elixir-ls",
 				"tailwindcss-language-server",
 				"emmet-language-server",

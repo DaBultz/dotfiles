@@ -22,7 +22,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			-- vim.cmd.colorscheme("tokyonight-night")
+			vim.cmd.colorscheme("tokyonight-night")
 		end,
 	},
 	{
@@ -79,7 +79,7 @@ return {
 			require("vague").setup({
 				-- optional configuration here
 			})
-			vim.cmd.colorscheme("vague")
+			-- vim.cmd.colorscheme("vague")
 		end,
 	},
 	{

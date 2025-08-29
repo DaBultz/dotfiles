@@ -57,9 +57,15 @@ return {
 			cmd = { "/home/bultz/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
 		})
 
-		vim.lsp.enable("tailwindcss")
+		vim.lsp.enable("lexical")
+		vim.lsp.config("lexical", {
+			cmd = { "/home/bultz/probe/expert_linux_amd64", "--stdio" },
+		})
 
-		vim.lsp.enable("emmet-language-server")
+		vim.lsp.enable("tailwindcss")
+		vim.lsp.enable("ts_ls")
+
+		-- vim.lsp.enable("emmet-language-server")
 		vim.lsp.config("emmet-language-server", {
 			filetypes = {
 				"astro",
@@ -95,9 +101,9 @@ return {
 		})
 
 		-- vim.lsp.enable("lexical")
-		vim.lsp.config("lexical", {
-			cmd = { "/home/bultz/probe/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
-		})
+		-- vim.lsp.config("lexical", {
+		-- 	cmd = { "/home/bultz/probe/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
+		-- })
 
 		vim.lsp.enable("clangd")
 		vim.lsp.config("clangd", {
