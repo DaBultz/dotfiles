@@ -52,7 +52,7 @@ return {
 			},
 		})
 
-		vim.lsp.enable("elixirls")
+		-- vim.lsp.enable("elixirls")
 		vim.lsp.config("elixirls", {
 			cmd = { "/home/bultz/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
 		})
@@ -60,6 +60,9 @@ return {
 		vim.lsp.enable("lexical")
 		vim.lsp.config("lexical", {
 			cmd = { "/home/bultz/probe/expert_linux_amd64", "--stdio" },
+			flags = {
+				allow_incremental_sync = false,
+			},
 		})
 
 		vim.lsp.enable("tailwindcss")

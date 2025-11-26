@@ -27,7 +27,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(~/.local/bin/mise activate)"
+eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env --use-on-cd --shell zsh --corepack-enabled)"
 
@@ -75,3 +75,6 @@ source $HOME/.zprofile
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
+
+# bun completions
+[ -s "/home/bultz/.bun/_bun" ] && source "/home/bultz/.bun/_bun"
