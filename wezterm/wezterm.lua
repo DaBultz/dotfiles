@@ -28,12 +28,11 @@ config.window_decorations = "RESIZE"
 
 config.color_scheme = "Rosé Pine (Gogh)"
 
-local font = "CommitMono"
+local font = "JetBrains"
 
 if font == "Fira Code" then
 	config.font = wezterm.font("Fira Code", {
 		weight = 300,
-		harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
 	})
 elseif font == "IBM" then
 	config.font = wezterm.font("IBM Plex Mono", {
@@ -42,17 +41,17 @@ elseif font == "IBM" then
 	config.freetype_load_target = "Light"
 elseif font == "JetBrains" then
 	config.font = wezterm.font("JetBrains Mono", {
-		weight = 300,
+		weight = 400,
 	})
 elseif font == "CommitMono" then
 	config.font = wezterm.font("CommitMono", {
 		weight = 400,
-		-- harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
 	})
 end
 
 config.max_fps = 160
-config.font_size = 14
+config.font_size = 13
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 config.window_padding = {
 	top = 2,
