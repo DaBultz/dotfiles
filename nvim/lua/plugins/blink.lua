@@ -53,6 +53,7 @@ return {
 					"fallback",
 				},
 			},
+			snippets = { preset = "luasnip" },
 			sources = {
 				default = { "lazydev", "lsp", "path", "snippets", "copilot" },
 				providers = {

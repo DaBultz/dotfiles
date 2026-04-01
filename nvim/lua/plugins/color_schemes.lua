@@ -1,28 +1,19 @@
 return {
 	{
-		"projekt0n/github-nvim-theme",
-		name = "github-theme",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
-			require("github-theme").setup({})
-		end,
-	},
-	{
-		lazy = false,
-		priority = 1000,
-		"savq/melange-nvim",
-		config = function()
-			vim.opt.termguicolors = true
-			-- vim.cmd.colorscheme("melange")
-		end,
-	},
-	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("tokyonight-night")
+			-- vim.cmd.colorscheme("tokyonight-night")
+		end,
+	},
+	{
+		"savq/melange-nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.opt.termguicolors = true
+			-- vim.cmd.colorscheme("melange")
 		end,
 	},
 	{
@@ -96,5 +87,30 @@ return {
 	},
 	{
 		"nyoom-engineering/oxocarbon.nvim",
+	},
+	{
+		"webhooked/kanso.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("kanso").setup({
+				foreground = {
+					dark = "saturated", -- Use default colors in dark mode
+				},
+			})
+
+			-- vim.cmd.colorscheme("kanso-zen")
+		end,
+	},
+	{
+		"wtfox/jellybeans.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			flat_ui = false,
+		},
+		config = function()
+			vim.cmd.colorscheme("jellybeans")
+		end,
 	},
 }
