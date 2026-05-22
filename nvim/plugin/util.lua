@@ -4,6 +4,7 @@ vim.pack.add({
 	"https://github.com/nvim-lualine/lualine.nvim",
 	"https://github.com/j-hui/fidget.nvim",
 	"https://github.com/folke/trouble.nvim",
+	-- "https://github.com/epwalsh/obsidian.nvim"
 })
 
 require("which-key").setup()
@@ -20,3 +21,13 @@ require("lualine").setup({
 		},
 	},
 })
+
+
+-- require("obsidian").setup({
+-- 	workspaces = {
+-- 		{
+-- 			name = "Personal",
+-- 			path = "~/Documents/Obsidian",
+-- 		}
+-- 	}
+-- })

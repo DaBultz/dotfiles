@@ -3,3 +3,4 @@ vim.pack.add({
 })
 
 require("mini.surround").setup({})
+require("mini.align").setup({})

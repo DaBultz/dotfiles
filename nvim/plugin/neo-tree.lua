@@ -11,6 +11,24 @@ vim.pack.add({
 })
 
 require("lsp-file-operations").setup()
-require("neo-tree").setup({})
+require("neo-tree").setup({
+	        filesystem = {
+          window = {
+            mappings = {
+              -- Make the mapping anything you want
+              ["R"] = "easy",
+            },
+          },
+          commands = {
+            ["easy"] = function(state)
+              local node = state.tree:get_node()
+              local path = node.type == "directory" and node.path or vim.fs.dirname(node.path)
+              require("easy-dotnet").create_new_item(path, function()
+                require("neo-tree.sources.manager").refresh(state.name)
+              end)
+            end
+          }
+        },
+})
 
 vim.keymap.set("n", "<leader>ex", "<CMD>Neotree toggle<CR>", { desc = "Open NeoTree (Explorer)" })

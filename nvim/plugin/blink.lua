@@ -45,7 +45,7 @@ require("blink.cmp").setup({
 		},
 	},
 	sources = {
-		default = { "lazydev", "lsp", "path", "snippets", "copilot" },
+		default = { "lazydev", "lsp", "easy-dotnet", "path", "snippets", "copilot" },
 		providers = {
 			lazydev = {
 				name = "LazyDev",
@@ -57,6 +57,13 @@ require("blink.cmp").setup({
 				name = "copilot",
 				module = "blink-copilot",
 				score_offset = 100,
+				async = true,
+			},
+			["easy-dotnet"] = {
+				name = "easy-dotnet",
+				enabled = true,
+				module = "easy-dotnet.completion.blink",
+				score_offset = 10000,
 				async = true,
 			},
 		},

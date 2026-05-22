@@ -103,23 +103,27 @@ export ZVM_INSTALL="$HOME/.zvm/self"
 export PATH="$PATH:$HOME/.zvm/bin"
 export PATH="$PATH:$ZVM_INSTALL/"
 
-
 eval "$(zoxide init zsh)"
 alias cd="z"
 alias tms="bash ~/.tmux/scripts/sessionizer.sh"
 alias v="nvim"
 alias yay="yay --diffmenu"
+alias oo="cd ~/Documents/Obsidian/ && tmux new-session -A -s obsidian 'nvim .'"
 # alias pacman="sudo pacman"
 
 # Path
-export DALAMUD_HOME="/home/bultz/.xlcore/dalamud/Hooks/dev"
+# export DALAMUD_HOME="/home/bultz/.xlcore/dalamud/Hooks/dev"
+# export DALAMUD_HOME="/home/bultz/Downloads/Release"
 export DOTNET_ROOT="/usr/share/dotnet"
 export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:$HOME/tools/Odin"
 export PATH="$PATH:$HOME/tools/ols"
+
+export CUDAPATH="/opt/cuda/"
 
 # Auto completion
 # source <(COMPLETE=bash jj)
 autoload -U compinit
 compinit
 source <(jj util completion zsh)
+

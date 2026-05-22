@@ -12,6 +12,7 @@ require("mason").setup({
 		-- Lua
 		"lua-language-server",
 		"stylua",
+		"clangd",
 	},
 })
 
@@ -20,6 +21,7 @@ require("null-ls").setup()
 require("easy-dotnet").setup()
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("copilot")
+vim.lsp.enable("clangd")
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -71,5 +73,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- check if the filetype is C/CPP
 		map("<M-o>", "<CMD>LspClangdSwitchSourceHeader<CR>", "[h]eader/source switch")
+
+		map("<M-CR>", vim.lsp.buf.code_action, "code [a]ction")
 	end,
 })
