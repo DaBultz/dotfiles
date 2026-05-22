@@ -5,7 +5,7 @@
 ### Neovim:
 
 ```sh
-sudo pacman -S base base-devel tree-sitter-cli ripgrep
+sudo pacman -S base base-devel tree-sitter-cli ripgrep grim slurp
 ```
 
 ### Tmux:

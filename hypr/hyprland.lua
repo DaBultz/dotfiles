@@ -242,10 +242,10 @@ hl.bind(super .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(super .. " + F", hl.dsp.window.fullscreen())
 
 -- Move focus with mainMod + arrow keys
-hl.bind(super .. " + h",  hl.dsp.focus({ direction = "left" }))
+hl.bind(super .. " + h", hl.dsp.focus({ direction = "left" }))
 hl.bind(super .. " + l", hl.dsp.focus({ direction = "right" }))
-hl.bind(super .. " + k",    hl.dsp.focus({ direction = "up" }))
-hl.bind(super .. " + j",  hl.dsp.focus({ direction = "down" }))
+hl.bind(super .. " + k", hl.dsp.focus({ direction = "up" }))
+hl.bind(super .. " + j", hl.dsp.focus({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -269,8 +269,13 @@ hl.bind(super .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(super .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Zoom in/out with super + scrollwheel 
--- bind = $super, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')
--- bind = $super, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float * 0.9) | if . < 1 then 1 else . end')
+-- bind = $super, mouse_down, exec, hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 + 1.0}')    
+-- bind = $super, mouse_up, exec, hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 - 1.0}')    
+-- bind = $super SHIFT, mouse_up, exec, hyprctl keyword cursor:zoom_factor 1
+
+-- Screenshot binds, requires grim and slurp
+hl.bind("ALT + Print", hl.dsp.exec_cmd("grim - | wl-copy"))
+hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp -w 0)\" - | wl-copy"))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
