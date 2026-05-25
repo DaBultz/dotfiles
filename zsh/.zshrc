@@ -5,6 +5,12 @@ if uwsm check may-start; then
   exec uwsm start hyprland.desktop
 fi
 
+# Set GPU persistence mode and lock clocks (once per session)
+if [[ ! -f /tmp/.nvidia-pm-set-$UID ]]; then
+  sudo nvidia-smi -pm 1 && sudo nvidia-smi --lock-gpu-clocks=240,1700 && touch /tmp/.nvidia-pm-set-$UID
+fi
+
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/

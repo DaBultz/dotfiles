@@ -20,7 +20,7 @@ hl.monitor({
 	mode     = "3440x1440@144",
 	bitdepth = 8,
 	scale    = 1,
-	vrr      = 1,
+	vrr      = 0,
 })
 
 
@@ -104,7 +104,7 @@ hl.config({
         },
 
         blur = {
-            enabled   = true,
+            enabled   = false,
             size      = 3,
             passes    = 1,
             vibrancy  = 0.1696,
@@ -326,7 +326,7 @@ hl.window_rule({
 hl.window_rule({
 	name = "pip-always-on-top",
 	match = {
-		title = "Picture in Picture",
+		title = "Picture in picture",
 	},
 	pin = true,
 	float = true,
@@ -339,10 +339,12 @@ hl.window_rule({
 local render_unfocused = {
  { title = "FINAL FANTASY XIV"},
  { class = "vivaldi-stable" }, -- stops PiP from freezing when vivaldi is on another workspace
- -- { class = "discord" },
+ { class = "discord" },
  { class = "steam_app_1501750" },
  { class = "wow.exe" },
  { class = "steam_app_1501750"},
+ { class = "steam_app_374320" }, -- Dark Souls 3
+ { class = "steam_app_2483190" }, -- Forza Horizon 6
 }
 
 for _, rule in ipairs(render_unfocused) do
