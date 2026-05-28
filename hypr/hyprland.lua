@@ -345,6 +345,8 @@ local render_unfocused = {
  { class = "steam_app_1501750"},
  { class = "steam_app_374320" }, -- Dark Souls 3
  { class = "steam_app_2483190" }, -- Forza Horizon 6
+ { class = "steam_app_1245620" }, -- Elden Ring
+ { class = "steam_app_374320" },
 }
 
 for _, rule in ipairs(render_unfocused) do
