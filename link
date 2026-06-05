@@ -11,3 +11,4 @@ ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -sf ~/dotfiles/idea/.ideavimrc ~/.ideavimrc
 
 chmod +x ~/dotfiles/tmux/scripts/sessionizer.sh
+cmod +x ~/dotfiles/hypr/x11-clipboard.sh

@@ -7,7 +7,7 @@ fi
 
 # Set GPU persistence mode and lock clocks (once per session)
 if [[ ! -f /tmp/.nvidia-pm-set-$UID ]]; then
-  sudo nvidia-smi -pm 1 && sudo nvidia-smi --lock-gpu-clocks=240,1700 && touch /tmp/.nvidia-pm-set-$UID
+  sudo nvidia-smi -pm 1 && sudo nvidia-smi --lock-gpu-clocks=240,1740 && touch /tmp/.nvidia-pm-set-$UID
 fi
 
 
@@ -114,7 +114,6 @@ alias cd="z"
 alias tms="bash ~/.tmux/scripts/sessionizer.sh"
 alias v="nvim"
 alias yay="yay --diffmenu"
-alias oo="cd ~/Documents/Obsidian/ && tmux new-session -A -s obsidian 'nvim .'"
 # alias pacman="sudo pacman"
 
 # Path

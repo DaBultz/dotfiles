@@ -43,7 +43,9 @@ local menu        = "wofi --show drun"
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function ()
-	hl.exec_cmd("wl-paste -t text -w xclip -selection clipboard")
+  hl.exec_cmd("wl-paste -t text -w bash -c 'wl-paste | xclip -selection clipboard -rmlastnl'")
+	hl.exec_cmd("bash ~/dotfiles/hypr/x11-clipboard.sh")
+	-- hl.exec_cmd("wl-paste -t text -w xclip -selection clipboard")
 	hl.exec_cmd("pactl load-module module-null-sink sink_name=Recording sink_properties=device.description=\"Recording Audio\"")
 	hl.exec_cmd("exec-once = pactl load-module module-combine-sink sink_name=combined-output slaves=Recording,easyeffects_sink")
 end)
@@ -114,6 +116,10 @@ hl.config({
     animations = {
         enabled = true,
     },
+
+		misc = {
+			render_unfocused_fps = 60
+		}
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
@@ -330,7 +336,7 @@ hl.window_rule({
 	},
 	pin = true,
 	float = true,
-	opacity = 0.6,
+	opacity = 0.8,
 	no_blur = true,
 	render_unfocused = true,
 })
@@ -346,7 +352,8 @@ local render_unfocused = {
  { class = "steam_app_374320" }, -- Dark Souls 3
  { class = "steam_app_2483190" }, -- Forza Horizon 6
  { class = "steam_app_1245620" }, -- Elden Ring
- { class = "steam_app_374320" },
+ { class = "steam_app_2694490" }, -- PoE 2
+
 }
 
 for _, rule in ipairs(render_unfocused) do
@@ -358,4 +365,3 @@ for _, rule in ipairs(render_unfocused) do
 				render_unfocused = true,
 		})
 end
-
