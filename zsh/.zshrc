@@ -6,9 +6,9 @@ if uwsm check may-start; then
 fi
 
 # Set GPU persistence mode and lock clocks (once per session)
-if [[ ! -f /tmp/.nvidia-pm-set-$UID ]]; then
-  sudo nvidia-smi -pm 1 && sudo nvidia-smi --lock-gpu-clocks=240,1740 && touch /tmp/.nvidia-pm-set-$UID
-fi
+# if [[ ! -f /tmp/.nvidia-pm-set-$UID ]]; then
+#   sudo nvidia-smi -pm 1 && sudo nvidia-smi --lock-gpu-clocks=240,1740 && touch /tmp/.nvidia-pm-set-$UID
+# fi
 
 
 # Set list of themes to pick from when loading at random
@@ -125,6 +125,7 @@ export PATH="$PATH:$HOME/tools/Odin"
 export PATH="$PATH:$HOME/tools/ols"
 
 export CUDAPATH="/opt/cuda/"
+export MANGOHUD=1
 
 # Auto completion
 # source <(COMPLETE=bash jj)

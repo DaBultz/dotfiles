@@ -43,11 +43,12 @@ local menu        = "wofi --show drun"
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function ()
-  hl.exec_cmd("wl-paste -t text -w bash -c 'wl-paste | xclip -selection clipboard -rmlastnl'")
-	hl.exec_cmd("bash ~/dotfiles/hypr/x11-clipboard.sh")
+  hl.exec_cmd("wl-paste -t text -w xclip -selection clipboard -rmlastnl'")
+	-- hl.exec_cmd("bash ~/dotfiles/hypr/x11-clipboard.sh")
 	-- hl.exec_cmd("wl-paste -t text -w xclip -selection clipboard")
 	hl.exec_cmd("pactl load-module module-null-sink sink_name=Recording sink_properties=device.description=\"Recording Audio\"")
 	hl.exec_cmd("exec-once = pactl load-module module-combine-sink sink_name=combined-output slaves=Recording,easyeffects_sink")
+	hl.exec_cmd("sudo nvidia-smi -pm 1 && sudo nvidia-smi --lock-gpu-clocks=240,1740")
 end)
 
 -------------------------------
@@ -292,10 +293,10 @@ hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+")
 hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
 
 -- Requires playerctl
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl --player=spotify next"),       { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl --player=spotify play-pause"), { locked = true })
+hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl --player=spotify play-pause"), { locked = true })
+hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl --player=spotify previous"),   { locked = true })
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
@@ -339,6 +340,15 @@ hl.window_rule({
 	opacity = 0.8,
 	no_blur = true,
 	render_unfocused = true,
+})
+
+hl.window_rule({
+	name = "keymapp",
+	match = {
+		class = "keymapp",
+	},
+	float = true,
+	pin = true
 })
 
 -- some applications doesn't work nicely when it doesn't render when unfocused
